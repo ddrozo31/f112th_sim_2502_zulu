@@ -18,19 +18,20 @@ def generate_launch_description():
         description='Use simulation/Gazebo clock')
     declare_slam_params_file_cmd = DeclareLaunchArgument(
         'slam_params_file',
-        default_value=os.path.join(get_package_share_directory("slam_toolbox"),
+        default_value=os.path.join(get_package_share_directory("f112th_sim_2502_zulu"),
                                    'config', 'mapper_params_localization.yaml'),
         description='Full path to the ROS2 parameters file to use for the slam_toolbox node')
 
+    
     start_localization_slam_toolbox_node = Node(
         package='slam_toolbox',
         executable='localization_slam_toolbox_node',
         name='slam_toolbox',
         output='screen',
-        parameters=[{
+        parameters=[slam_params_file,{
         'use_sim_time': use_sim_time,
         'mode': 'localization',
-        'map_file_name': '/home/ddrozo/ros2_ws_2502/src/f112th_sim_2502_zulu/map/map_room_cw_serial',
+        'map_file_name': '/home/davidrozoosorio/ros2_ws_2502/src/f112th_sim_2502_zulu/map/room_wf_serial',
         'map_start_pose': [0.0, 0.0, 0.0],
         'map_frame': 'map',
         'odom_frame': 'odom',

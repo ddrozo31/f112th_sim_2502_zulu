@@ -15,7 +15,7 @@ slam_toolbox:
     mode: localization
 
     # if you'd like to start localizing on bringup in a map and pose
-    #map_file_name: ~/ros2_ws_2502/src/f112th_sim_2502_zulu/map_room_cw_serial.data
+    #map_file_name: test_steve
     #map_start_pose: [5.0, 1.0, 0.0]
 
     debug_logging: false
